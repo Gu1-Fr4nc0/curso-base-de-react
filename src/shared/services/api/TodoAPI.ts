@@ -4,13 +4,13 @@ const axiosInstance = axios.create();
 
 interface ITodo {
     id: string;
-    title: string;
-    completed: boolean;
+    label: string;
+    complete: boolean;
 }
 
 interface ITodoWithoutId {
-    title: string;
-    completed: boolean;
+    label: string;
+    complete: boolean;
 }
 
 export const TodoAPI = {
@@ -18,19 +18,19 @@ export const TodoAPI = {
         const response = await axiosInstance.get('/api/todos');
 
         return response.data.todos as ITodo[];
-    }
+    },
 
     async create(data: ITodoWithoutId){
         const response = await axiosInstance.post('/api/todos', data);
 
         return response.data.todos as ITodo;
-    }
+    },
 
     async updateById(id:string, data:Partial<ITodoWithoutId>){
         await axiosInstance.put(`/api/todos/${id}`, data);
         
         return;
-    }
+    },
 
     async deleteById(id:string){
         await axiosInstance.delete(`/api/todos/${id}`);
