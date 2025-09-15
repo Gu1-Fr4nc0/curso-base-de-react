@@ -2,7 +2,7 @@ import axios from "axios";
 
 const axiosInstance = axios.create();
 
-interface ITodo {
+export interface ITodo {
     id: string;
     label: string;
     complete: boolean;
