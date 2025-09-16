@@ -1,0 +1,19 @@
+.pageLayoutContainer {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 16px;
+}
+
+.pageContent {
+  width: 100%;
+  max-width: 800px;
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pageTitle{
+  margin-top: 0;
+}
